@@ -1,3 +1,5 @@
+code.cloudfoundry.org/cli-plugin-repo v0.0.0-20210111185146-187f1755eedc h1:6P22M8CGjTVIYV/7voPccF/szuknep52kIh5gCbe568=
+code.cloudfoundry.org/cli-plugin-repo v0.0.0-20210111185146-187f1755eedc/go.mod h1:R1EiyOAr7lW0l/YkZNqItUNZ01Q/dYUfbTn4X4Z+82M=
 github.com/blang/semver v3.5.1+incompatible h1:cQNTCjp13qL8KC3Nbxr/y2Bqb63oX6wdnnjpJbkM4JQ=
 github.com/blang/semver v3.5.1+incompatible/go.mod h1:kRBLl5iJ+tD4TcOOxsy/0fnwebNt5EWlYSAyrTnjyyk=
 github.com/codegangsta/negroni v1.0.0 h1:+aYywywx4bnKXWvoWtRfJ91vC59NbEhEY03sZjQhbVY=

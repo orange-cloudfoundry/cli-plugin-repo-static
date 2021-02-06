@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"code.cloudfoundry.org/cli-plugin-repo/sort/yamlsorter"
-	"code.cloudfoundry.org/cli-plugin-repo/web"
+	"github.com/orange-cloudfoundry/cli-plugin-repo-static/sort/yamlsorter"
+	"github.com/orange-cloudfoundry/cli-plugin-repo-static/web"
 	"github.com/blang/semver"
 	"gopkg.in/yaml.v2"
 
@@ -171,7 +171,7 @@ var _ = Describe("Database", func() {
 			}
 
 			// Binary will be cleaned up in AfterSuite
-			runnerPath, err := Build("code.cloudfoundry.org/cli-plugin-repo/pluginrunner")
+			runnerPath, err := Build("github.com/orange-cloudfoundry/cli-plugin-repo-static")
 			Expect(err).ToNot(HaveOccurred())
 
 			fmt.Println("\nRunning Binary Validations, this could take 10+ minutes")

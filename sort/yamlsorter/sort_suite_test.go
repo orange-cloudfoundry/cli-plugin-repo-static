@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func TestMain(t *testing.T) {
+func TestMain(m *testing.M) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "YAML Sorter Suite")
+	RunSpecs(m, "YAML Sorter Suite")
 }

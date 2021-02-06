@@ -1,7 +1,7 @@
 package yamlsorter_test
 
 import (
-	. "code.cloudfoundry.org/cli-plugin-repo/sort/yamlsorter"
+	. "github.com/orange-cloudfoundry/cli-plugin-repo-static/sort/yamlsorter"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

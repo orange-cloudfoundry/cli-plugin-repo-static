@@ -1,8 +1,9 @@
-module code.cloudfoundry.org/cli-plugin-repo
+module github.com/orange-cloudfoundry/cli-plugin-repo-static
 
 go 1.12
 
 require (
+	code.cloudfoundry.org/cli-plugin-repo v0.0.0-20210111185146-187f1755eedc
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/codegangsta/negroni v1.0.0 // indirect
 	github.com/golang/protobuf v1.3.2 // indirect
