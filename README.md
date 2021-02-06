@@ -1,7 +1,12 @@
-# Cloud Foundry CLI Plugin Repository (CLIPR)[![Build Status](https://travis-ci.org/cloudfoundry/cli-plugin-repo.svg?branch=master)](https://travis-ci.org/cloudfoundry/cli-plugin-repo)
+# Cloud Foundry CLI Plugin Repository (CLIPR)
 
-This is a public repository for community created CF CLI plugins. To submit your plugin
-approval, please submit a pull request according to the guidelines below.
+This is a public repository for orange and community created CF CLI plugins as a static generated website. 
+It was created to not wait approval on original repo which seems not watched anymore. 
+To submit your plugin approval, please submit a pull request according to the guidelines below.
+
+Access to list for human: https://orange-cloudfoundry.github.io/cli-plugin-repo-static/
+
+Install the repo on your cf cli with: `cf add-plugin-repo CF-Orange https://orange-cloudfoundry.github.io/cli-plugin-repo-static/`
 
 ## Submitting Plugins
 
