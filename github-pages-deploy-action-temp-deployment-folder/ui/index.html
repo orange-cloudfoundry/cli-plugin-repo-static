@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <link href="ui/css/components.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="ui/css/cff.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+
+  <title>cf CLI Plugins &ndash; Cloud Foundry Community</title>
+
+  <link href="images/favicon.png" rel="icon" type="image/png"/>
+</head>
+
+<body class="bg-neutral-10">
+<div class="container-fluid" style="min-width: 1024px; background-color: #0c9ed5; padding: 15px 90px 12px 90px;">
+  <div class="row-fluid">
+    <div class="row txt-r">
+      <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">
+        <ul class="list-inline-divider pts mbn list-of-links em-high">
+          <li class="plxl">
+            <a class="type-neutral-11" href="https://github.com/cloudfoundry/cli" target="_blank">
+              <span>Download cf CLI</span></a>
+          </li>
+          <li class="plxl">
+            <a class="type-neutral-11" href="https://cloudfoundry.org" target="_blank">
+              <span>Visit CloudFoundry.org</span></a>
+          </li>
+          <li class="plxl">
+            <a class="type-neutral-11" href="https://github.com/cloudfoundry/cli-plugin-repo" target="_blank">
+              <span>Fork me on Github</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" style="min-width: 1024px; max-width: 1280px; margin-bottom: 60px">
+  <div>
+    <div class="row mtxxxl">
+      <!-- main column -->
+      <div class="col-xs-18 col-sm-18 col-md-18 col-lg-18 bg-neutral-11 phxxxl">
+        <h2><span style="color: red">Install repo first with command</span> <code>cf add-plugin-repo CF-Orange
+          https://orange-cloudfoundry.github.io/cli-plugin-repo-static/</code></h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" style="min-width: 1024px; max-width: 1280px; margin-bottom: 60px">
+  <!-- plugin list -->
+  <div>
+    <div class="row mtxxxl">
+      <!-- main column -->
+      <div class="col-xs-18 col-sm-18 col-md-18 col-lg-18 bg-neutral-11 phxxxl">
+        {{range .Plugins}}
+        <div>
+          <div class="mtxxl"></div>
+          <a class="permalinkHoverable" href="#{{.Name}}">
+            <h3 class="name" id="{{.Name}}" style="display: inline-block">{{.Name}}</h3>
+            {{if .Version}}
+            <span class="version type-sm"> &ndash; v.{{.Version}}</span>
+            {{end}}
+            <span class="permalink"><h3 class="name" style="display: inline-block">&para;</h3></span>
+          </a>
+          <p class="date pull-right mvl type-sm type-neutral-4">{{.Updated.Format "2006-01-02"}}</p>
+          <p class="description mtl" style="white-space: pre-line">
+            {{.Description}}
+          </p>
+          <div class="table">
+            <div class="tr grid">
+              <div class="td col col-4 txt-r">install:</div>
+              <div class="td col col-20">
+                <code class="bg-neutral-10 type-brand-6 phl">cf install-plugin -r CF-Orange "{{.Name}}"</code>
+              </div>
+            </div>
+            {{if .Company}}
+            <div class="tr grid">
+              <div class="td col col-4 txt-r">
+                company:
+              </div>
+              <div class="td col col-20">
+                {{.Company}}
+              </div>
+            </div>
+            {{end}}
+            {{if .Homepage}}
+            <div class="tr grid">
+              <div class="td col col-4 txt-r">
+                homepage:
+              </div>
+              <div class="td col col-20">
+                <a href='{{.Homepage}}' target="_blank">{{.Homepage}}</a>
+              </div>
+            </div>
+            {{end}}
+            {{if .Authors}}
+            <div class="tr grid">
+              <div class="td col col-4 txt-r">
+                author{{if gt (len .Authors) 1 }}s{{end}}:
+              </div>
+              <div class="td col col-20">
+                {{range .Authors}}
+                <div><a href='{{.Homepage}}' target="_blank">
+                  {{.Name}}</a>
+                  {{if .Contact}}
+                  <span>
+                        <span class="type-sm type-neutral-4"> - {{.Contact}}</span>
+                      </span>
+                  {{end}}
+                </div>
+                {{end}}
+              </div>
+            </div>
+            {{end}}
+            <div class="tr grid">
+              <div class="td col col-4 txt-r">
+                platforms:
+              </div>
+              <div class="td col col-20">
+                <div>
+                  {{range $i, $bin := .Binaries}}
+                  {{if gt $i 0}}, {{end}}
+                  <a href='{{$bin.Url}}' target=_blank>{{$bin.Platform}}</a>
+                  {{end}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="divider-alternate-1"/>
+        </div>
+        {{end}}
+      </div>
+      <!-- right column -->
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="plxxl" style="margin-top: 144px;">
+          <h1>Cloud Foundry Community</h1>
+          <h2 class="mtl">cf CLI Plugins</h2>
+          <p class="mvxl type-sm">
+            IMPORTANT: Plugins are provided by community members but have not been reviewed by the Cloud Foundry
+            Foundation. USE PLUGINS AT YOUR OWN RISK. If you believe a plugin is malicious or faulty, contact the
+            <a href="https://cloudfoundry.slack.com/app_redirect?channel=cli">#cli</a> team on Cloud Foundry Slack.
+          </p>
+          <p class="mvxl type-sm">
+            To include your plugin in our community repo, please follow the
+            <a href="http://github.com/cloudfoundry/cli-plugin-repo" target="_blank">instructions on Github</a>.
+          </p>
+          <p class="mvxl type-sm">
+            To learn how to write your own plugin, see our
+            <a href="https://github.com/cloudfoundry/cli/tree/master/plugin/plugin_examples" target="_blank">examples</a>.
+          <div class="mtxxxxl">
+            <a href="https://cloudfoundry.org" target="_blank">
+              <img alt="Cloud Foundry Foundation Logo" class="img-responsive" src="ui/images/cff-logo-horizontal.png"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  <script>-->
+<!--    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+<!--    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+<!--    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+<!--    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');-->
+
+<!--    ga('create', 'UA-52116311-3', 'auto');-->
+<!--    ga('send', 'pageview');-->
+
+<!--  </script>-->
+</body>
+</html>
