@@ -36,6 +36,17 @@
   </div>
 </div>
 <div class="container" style="min-width: 1024px; max-width: 1280px; margin-bottom: 60px">
+  <div>
+    <div class="row mtxxxl">
+      <!-- main column -->
+      <div class="col-xs-18 col-sm-18 col-md-18 col-lg-18 bg-neutral-11 phxxxl">
+        <h2><span style="color: red">Install repo first with command</span> <code>cf add-plugin-repo CF-Orange
+          https://orange-cloudfoundry.github.io/cli-plugin-repo-static/</code></h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" style="min-width: 1024px; max-width: 1280px; margin-bottom: 60px">
   <!-- plugin list -->
   <div>
     <div class="row mtxxxl">
@@ -59,7 +70,7 @@
             <div class="tr grid">
               <div class="td col col-4 txt-r">install:</div>
               <div class="td col col-20">
-                <code class="bg-neutral-10 type-brand-6 phl">cf install-plugin -r CF-Community "{{.Name}}"</code>
+                <code class="bg-neutral-10 type-brand-6 phl">cf install-plugin -r CF-Orange "{{.Name}}"</code>
               </div>
             </div>
             {{if .Company}}
